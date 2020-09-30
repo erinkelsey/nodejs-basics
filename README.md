@@ -1,6 +1,6 @@
-# Node.js Basics
+# Node.js and Express Basics
 
-Some basic commands and details about Node.js.
+Some basic commands and details about Node.js and Express.
 
 ### Node REPL
 
@@ -37,3 +37,13 @@ Development:
 All:
 
     $ npm install --save [package-name]
+
+NOTE: --save is done automatically now
+
+### Install all modules in package.json
+
+    $ npm install
+
+### Install Express
+
+    $ npm install express
