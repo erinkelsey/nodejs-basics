@@ -1,3 +1,6 @@
+/**
+ * Setup and initialization.
+ */
 require("dotenv").config();
 
 const express = require("express");
@@ -7,10 +10,23 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/**
+ * GET Method for main route.
+ *
+ * Sends back the index.html to render as the page.
+ */
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+/**
+ * POST method for main route.
+ *
+ * Makes a call to the OpenWeather API to retrieve the
+ * weather data for the city the user has specified.
+ * Returns the current weather data for the city, if found,
+ * else returns a response that it could not be found.
+ */
 app.post("/", (req, res) => {
   const apiKey = process.env.API_KEY;
   const query = req.body.cityName;
@@ -41,6 +57,9 @@ app.post("/", (req, res) => {
   });
 });
 
+/**
+ * Start up server to listen on port 3000.
+ */
 app.listen(3000, () => {
   console.log("Server is running on port 3000.");
 });
