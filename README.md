@@ -1,4 +1,6 @@
-# Node.js and Express Basics
+# Node.js Basics
+
+Some basic commands and details about Node.js.
 
 ### Node REPL
 
