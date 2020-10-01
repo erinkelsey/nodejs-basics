@@ -8,13 +8,19 @@ Install node modules:
 
     $ npm install
 
-You will need a Mailchimp account and API Key, so you need to sign up: https://mailchimp.com
+You will need a Mailchimp account and API Key, Mailchimp server location and Audience List ID, so you need to sign up: https://mailchimp.com
 
 To create a new API Key, click on your user -> Account -> Extras -> Create a Key
 
-Create a .env file in the main directory and add your OpenWeather API Key like so:
+To get your audience list ID, click on Audience -> Audience Dashboard -> Settings -> Scroll to the bottom where it says Unique id for audience ...
+
+To get the Mailchimp server ID, check your API Key, and it is the last 4 chars, for example your key is sslkflskdfjsfowiejflskdfjus14. The server ID is us14. The server number could be a single digit, for example us4.
+
+Create a .env file in the main directory and add your OpenWeather API Key and Audience ID like so:
 
     MAILCHIMP_API_KEY=key1234567892928374
+    MAILCHIMP_AUDIENCE_ID=2skfjlks3ds
+    MAILCHIMP_SERVER_ID=us14
 
 ### Run
 
