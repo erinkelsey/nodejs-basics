@@ -75,3 +75,7 @@ NOTE: --save is done automatically now
 7.  Deploy code with
 
         $ git push heroku master
+
+8.  Logs for server
+
+        $ heroku logs --tail
