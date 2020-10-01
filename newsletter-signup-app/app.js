@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
 /**
  * POST method for main route.
  *
+ * Called when user submits their data in the sign up form.
+ * Sends a post request to the Mailchimp API with the new user
+ * data, and sends back a success ro failure page, depending
+ * on the response status from the Mailchimp API.
  */
 app.post("/", (req, res) => {
   const data = {
@@ -41,7 +45,6 @@ app.post("/", (req, res) => {
 
   const jsonData = JSON.stringify(data);
   const url = `https://${process.env.MAILCHIMP_SERVER_ID}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}`;
-  // console.log(url);
 
   // username:api_key -> you can have ANYTHING for username
   const options = {
@@ -50,13 +53,24 @@ app.post("/", (req, res) => {
   };
 
   const request = https.request(url, options, (response) => {
-    response.on("data", (data) => {
-      console.log(JSON.parse(data));
-    });
+    if (response.statusCode === 200) {
+      res.sendFile(__dirname + "/success.html");
+    } else {
+      res.sendFile(__dirname + "/failure.html");
+    }
   });
 
   request.write(jsonData);
   request.end();
+});
+
+/**
+ * POST method for /failure route.
+ *
+ * Redirects to the main route.
+ */
+app.post("/failure", (req, res) => {
+  res.redirect("/");
 });
 
 /**
