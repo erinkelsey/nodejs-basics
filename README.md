@@ -50,18 +50,28 @@ NOTE: --save is done automatically now
 
 ## Deploy to Heroku
 
-Download the Heroku CLI: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+1.  Download the Heroku CLI: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
-Login to Heroku (press any key to open up browser to login):
+2.  Login to Heroku (press any key to open up browser to login):
 
-    $ heroku login
+        $ heroku login
 
-Make sure the the main JS file has the correct port setup:
+3.  Make sure the the main JS file has the correct port setup:
 
-    app.listen(process.env.PORT || 3000, () => {
-        console.log("server is running on port 3000");
-    });
+        app.listen(process.env.PORT || 3000, () => {
+            console.log("server is running on port 3000");
+        });
 
-Add a Profile to the main directory. The Procfile tells Heroku how to run the app. Example contents for Node.js:
+4.  Add a Profile to the main directory. The Procfile tells Heroku how to run the app. Example contents for Node.js:
 
-    web: node app.js
+        web: node app.js
+
+5.  Make sure that all changes are committed to Git
+
+6.  Create a new Heroku app for the project:
+
+        $ heroku create
+
+7.  Deploy code with
+
+        $ git push heroku master
