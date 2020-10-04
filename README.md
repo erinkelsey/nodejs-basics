@@ -72,11 +72,11 @@ NOTE: --save is done automatically now
 
 Auto-generated name:
 
-        $ heroku create
+    $ heroku create
 
 Specified name:
 
-        $ heroku create <name>
+    $ heroku create <name>
 
 7.  Deploy code with
 
