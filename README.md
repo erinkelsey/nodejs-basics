@@ -70,7 +70,13 @@ NOTE: --save is done automatically now
 
 6.  Create a new Heroku app for the project:
 
+Auto-generated name:
+
         $ heroku create
+
+Specified name:
+
+        $ heroku create <name>
 
 7.  Deploy code with
 
