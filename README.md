@@ -2,6 +2,23 @@
 
 Some basic commands and details about Node.js and Express.
 
+### Node Event Loop
+
+- Timers
+  - Execute setTimeout, setInterval callbacks
+- Pending Callbacks
+  - Execute I/O related callbacks that were detected (I/O -> disk and network operations -> blocking operations)
+- Poll
+  - retrieve new I/O events, execute their callbacks
+  - or jump to Timer execution
+  - or defer execution back to Pending Callbacks
+- Check
+  - execute setImmediate callbacks
+- Close callbacks
+  - execute all 'close' event callbacks
+- process.exit
+  - when refs == 0, else loop
+
 ### Node REPL
 
 REPL (Read Evaluation Print Loops), similar to the Console on a web browser.
@@ -25,6 +42,10 @@ Exit:
 ### Create package.json file
 
     $ npm init
+
+To say yes to all of the defaults:
+
+    $ npm init -y
 
 Follow the prompts to create one for your specifications.
 
