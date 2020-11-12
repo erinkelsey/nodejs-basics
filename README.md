@@ -2,7 +2,7 @@
 
 Some basic commands and details about Node.js and Express.
 
-### Node Event Loop
+## Node Event Loop
 
 - Timers
   - Execute setTimeout, setInterval callbacks
@@ -19,7 +19,7 @@ Some basic commands and details about Node.js and Express.
 - process.exit
   - when refs == 0, else loop
 
-### Node REPL
+## Node REPL
 
 REPL (Read Evaluation Print Loops), similar to the Console on a web browser.
 
@@ -68,6 +68,44 @@ NOTE: --save is done automatically now
 ### Install Express
 
     $ npm install express
+
+## Templating Engines
+
+### EJS (Embedded JavaScript)
+
+Uses normal HTML and plain JavaScript for the templates
+
+Syntax:
+
+    <p><%= name %><p>
+
+Install:
+
+    $ npm install --save ejs
+
+### Pug (Jade)
+
+Uses minimal HTML and custom template language
+
+Syntax:
+
+    p #{name}
+
+Install:
+
+    $ npm install --save pug
+
+### Handlebars
+
+Uses normal HTML and custom template language
+
+Syntax:
+
+    <p>{{ name }}</p>
+
+Install:
+
+    $ npm install --save express-handlebars
 
 ## Deploy to Heroku
 
